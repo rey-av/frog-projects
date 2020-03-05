@@ -4,8 +4,8 @@ import com.frog.takhsin.enums.SortDirection;
 
 public class BubbleSort extends AbstractSort {
 
-    public BubbleSort(String name) {
-        super(name);
+    public BubbleSort() {
+        super("Bubble sort");
     }
 
 
