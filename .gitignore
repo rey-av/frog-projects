@@ -3,6 +3,4 @@
 *.iml
 *.log
 logs/
-phantom_storage
-application.properties
-logback.xml
+*.class
