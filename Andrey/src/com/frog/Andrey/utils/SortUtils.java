@@ -1,5 +1,7 @@
 package com.frog.Andrey.utils;
 
+import com.frog.Andrey.classes.SortInfo;
+
 public abstract class SortUtils {
 
     /**
@@ -8,22 +10,25 @@ public abstract class SortUtils {
      * @param array Array to be sorted.
      * @return Number of swaps used by bubble sort.
      */
-    public static int bubbleSort(int[] array) {
-        int size;
-        if (array == null || (size = array.length) <= 0) return 0;
-
+    public static SortInfo bubbleSort(int[] array) {
+        if (array == null || array.length <= 0) return new SortInfo(0, 0);
+        int passes = 1; // last pass
         int total = 0;
-        int fixed;
-
-        do {
-            fixed = total;
-            total += bubbleIterate(array);
-        } while (total != fixed);
-
-        return total;
+        int swaps;
+        while ((swaps = bubbleIterate(array)) != 0) {
+            total += swaps;
+            passes++;
+        }
+        return new SortInfo(passes, total);
     }
 
 
+    /**
+     * Performs a single bubble sort iteration.
+     *
+     * @param array Array to be iterated.
+     * @return Number of swaps used by iteration.
+     */
     public static int bubbleIterate(int[] array) {
         int size;
         if (array == null || (size = array.length) <= 0) return 0;
