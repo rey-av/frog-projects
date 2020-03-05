@@ -6,4 +6,4 @@ logs/
 phantom_storage
 application.properties
 logback.xml
-/production
+*.class
