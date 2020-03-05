@@ -14,16 +14,19 @@ public class SelectionSort {
 
 
     public static void sort(int[] arr) {
-        int len;
-        if (arr == null || (len = arr.length) <= 0) return;
-        int iMax;
-        while (len > 1) {
-            iMax = 0;
-            for (int i = 1; i < len; i++) {
-                if (arr[i] > arr[iMax]) iMax = i;
+        int remain; // count of elements left to sort
+        if (arr == null || (remain = arr.length) <= 0) {
+            return;
+        }
+
+        int max; // index of max
+        while (remain > 1) {
+            max = 0;
+            for (int i = 1; i < remain; i++) {
+                if (arr[i] > arr[max]) max = i;
             }
-            if (iMax != len - 1) swap(arr, iMax, len - 1);
-            len--;
+            if (max != remain - 1) swap(arr, max, remain - 1);
+            remain--;
         }
     }
 
