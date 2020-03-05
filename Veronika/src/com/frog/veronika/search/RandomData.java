@@ -1,11 +1,10 @@
 package com.frog.veronika.search;
 
-import java.util.Arrays;
 import java.util.Random;
 
-public class GenerateArray {
+public class RandomData {
 
-    protected int[] nums;
+    private int[] nums;
     private Random rnd = new Random(System.currentTimeMillis());
 
 
@@ -33,6 +32,13 @@ public class GenerateArray {
 
     public int[] getArray() {
         return nums;
+    }
+
+    public void setArray(int[] arr) {
+        nums = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            nums[i] = arr[i];
+        }
     }
 
 }

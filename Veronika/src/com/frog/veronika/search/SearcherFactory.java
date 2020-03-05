@@ -4,7 +4,6 @@ import com.frog.veronika.search.abstractClass.AbstractSearch;
 import com.frog.veronika.search.searcherClass.SearchBinary;
 import com.frog.veronika.search.searcherClass.SearchLinear;
 
-import javax.lang.model.type.NullType;
 
 import static com.frog.veronika.search.EnumSearch.*;
 

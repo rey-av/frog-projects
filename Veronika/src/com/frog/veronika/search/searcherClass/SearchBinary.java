@@ -1,26 +1,30 @@
 package com.frog.veronika.search.searcherClass;
 
-import com.frog.veronika.search.GenerateArray;
 import com.frog.veronika.search.abstractClass.AbstractSearch;
 
 public class SearchBinary extends AbstractSearch {
 
+    /**
+     * @param arr УПОРЯДОЧЕННЫЙ массив int[]
+     * @param key искомое значение
+     * @return
+     */
     @Override
-    public int Search(GenerateArray arr, int key) {
+    public int Search(int[] arr, int key) {
 
         int index = -1;
-        int high = arr.getArray().length - 1;
+        int high = arr.length - 1;
         int low = 0;
 
         while (low <= high) {
 
             int mid = (low + high) / 2;
 
-            if (arr.getArray()[mid] < key) {        // поиск в "правой" половине массива
+            if (arr[mid] < key) {        // поиск в "правой" половине массива
                 low = mid + 1;
-            } else if (arr.getArray()[mid] > key) { // поиск в "левой" половине массива
+            } else if (arr[mid] > key) { // поиск в "левой" половине массива
                 high = mid - 1;
-            } else if (arr.getArray()[mid] == key) { // если середина равна искомому значению
+            } else if (arr[mid] == key) { // если середина равна искомому значению
                 index = mid;
                 break;
             }

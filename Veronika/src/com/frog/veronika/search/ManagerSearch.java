@@ -13,7 +13,7 @@ public class ManagerSearch {
     }
 
 
-    public int Search(searcherType type, GenerateArray arr, int key) {
+    public int Search(searcherType type, int[] arr, int key) {
         AbstractSearch searcher = fact.SelectSearcher(type);
         if (searcher == null) {
             System.out.println("Invalid searcher type. Search was interrupted. Current search type: " + type);

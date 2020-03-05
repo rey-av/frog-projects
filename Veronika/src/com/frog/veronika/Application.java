@@ -1,6 +1,6 @@
 package com.frog.veronika;
 
-import com.frog.veronika.search.GenerateArray;
+import com.frog.veronika.search.RandomData;
 import com.frog.veronika.search.ManagerSearch;
 
 import java.util.Arrays;
@@ -12,23 +12,23 @@ public class Application {
     public static void main(String[] args) {// TODO: добавить логи
         ManagerSearch searchManager = new ManagerSearch();
 
-        GenerateArray array = new GenerateArray();
+        RandomData array = new RandomData();
         array.createArray();
 
         int searchKey = 48;
 
-        int resultLinear = searchManager.Search(searcherType.LINEAR, array, searchKey);
+        int resultLinear = searchManager.Search(searcherType.LINEAR, array.getArray(), searchKey);
         System.out.println("Linear search works:");
         System.out.println(Arrays.toString(array.getArray()));
         System.out.println("Index of " + searchKey + " : " + resultLinear + "\n");
 
         array.createOrderedArray();
-        int resultBinary = searchManager.Search(searcherType.BINARY, array, searchKey);
+        int resultBinary = searchManager.Search(searcherType.BINARY, array.getArray(), searchKey);
         System.out.println("Binary search works:");
         System.out.println(Arrays.toString(array.getArray()));
         System.out.println("Index of " + searchKey + " : " + resultBinary + "\n");
 
-        int resultError = searchManager.Search(searcherType.ERROR_CHECK, array, 100);
+        int resultError = searchManager.Search(searcherType.ERROR_CHECK, array.getArray(), 100);
 
     }
 
