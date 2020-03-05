@@ -1,4 +1,4 @@
-package com.frog.Ivan;
+package com.frog.Ivan.sort;
 
 public class BuubleInArray {
 }

@@ -1,11 +1,9 @@
-package com.frog.Ivan;
+package com.frog.Ivan.count;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class ArrayCounters {
-
-
 
     public static void main(String[] args) throws Exception {
 

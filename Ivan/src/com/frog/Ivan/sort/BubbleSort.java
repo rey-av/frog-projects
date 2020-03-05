@@ -1,4 +1,4 @@
-package com.frog.Ivan;
+package com.frog.Ivan.sort;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
