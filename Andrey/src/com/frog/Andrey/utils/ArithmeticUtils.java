@@ -16,16 +16,16 @@ public abstract class ArithmeticUtils {
     /**
      * Calculates checksum of given array.
      *
-     * @param seed  Seed to be used in calculations.
-     * @param limit Limit to be used in calculations.
+     * @param SEED  Seed to be used in calculations.
+     * @param LIMIT Limit to be used in calculations.
      * @param array Array which checksum is to be checked.
      * @return Checksum of a given array.
      */
-    public static int checksum(final int seed, final int limit, int[] array) {
+    public static int checksum(final int SEED, final int LIMIT, int[] array) {
         int size;
         if (array == null || (size = array.length) <= 0) return 0;
         int result = 0;
-        for (int index = 0; index < size; index++) result = (result + array[index]) * seed % limit;
+        for (int index = 0; index < size; index++) result = (result + array[index]) * SEED % LIMIT;
         return result;
     }
 

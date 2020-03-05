@@ -11,16 +11,28 @@ public abstract class SortUtils {
     public static int bubbleSort(int[] array) {
         int size;
         if (array == null || (size = array.length) <= 0) return 0;
+
         int total = 0;
-        int count;
+        int fixed;
+
         do {
-            count = total;
-            for (int index = 1; index < size; index++) {
-                int prev = index - 1;
-                if (array[prev] > array[index]) total += swap(array, prev, index);
-            }
-        } while (total != count);
+            fixed = total;
+            total += bubbleIterate(array);
+        } while (total != fixed);
+
         return total;
+    }
+
+
+    public static int bubbleIterate(int[] array) {
+        int size;
+        if (array == null || (size = array.length) <= 0) return 0;
+        int count = 0;
+        for (int index = 1; index < size; index++) {
+            int prev = index - 1;
+            if (array[prev] > array[index]) count += swap(array, prev, index);
+        }
+        return count;
     }
 
 
