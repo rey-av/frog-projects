@@ -4,13 +4,17 @@ import com.frog.takhsin.enums.SortDirection;
 
 public class SelectionSort extends AbstractSort {
 
-    public SelectionSort(String name) {
-        super(name);
+    public SelectionSort() {
+        super("Selection sort");
     }
 
 
     public int[] sort(int[] arr, SortDirection direction) {
         super.sort(arr, direction);
+
+        if (arr.length == 1) {
+            return arr;
+        }
 
         boolean swap = false;
         for (int i = 0; i < arr.length - 1; i++) {
