@@ -1,13 +1,34 @@
 package com.frog.takhsin.classes.sorting;
 
 import com.frog.takhsin.enums.SortDirection;
-import com.frog.takhsin.interfaces.ISort;
 
-public class SelectionSort implements ISort {
+public class SelectionSort extends AbstractSort {
 
-    @Override
+    public SelectionSort(String name) {
+        super(name);
+    }
+
+
     public int[] sort(int[] arr, SortDirection direction) {
-        return new int[0];
+        super.sort(arr, direction);
+
+        boolean swap = false;
+        for (int i = 0; i < arr.length - 1; i++) {
+            int swapPos = i;
+
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[i]) {
+                    swapPos = j;
+                    swap = true;
+                }
+            }
+
+            if (swap) {
+                swap(arr, i, swapPos);
+            }
+        }
+
+        return arr;
     }
 
 }
