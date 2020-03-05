@@ -17,9 +17,16 @@ public class SelectionSort extends AbstractSort {
             int swapPos = i;
 
             for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[i]) {
-                    swapPos = j;
-                    swap = true;
+                if (direction.equals(SortDirection.ASC)) {
+                    if (arr[j] < arr[i]) {
+                        swapPos = j;
+                        swap = true;
+                    }
+                } else {
+                    if (arr[j] > arr[i]) {
+                        swapPos = j;
+                        swap = true;
+                    }
                 }
             }
 
