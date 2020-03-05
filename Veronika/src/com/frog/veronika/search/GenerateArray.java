@@ -5,27 +5,34 @@ import java.util.Random;
 
 public class GenerateArray {
 
-    private int[] nums;
+    protected int[] nums;
     private Random rnd = new Random(System.currentTimeMillis());
 
+
     public int[] createArray() {
-        nums = new int[]{39, 56, 82, 112, 136, 5, 162, 253, 7, 21, 73, 226, 182, 67, 147, 45, 287, 282, 191,
-                151, 285, 132, 257, 245, 190, 254, 272, 89, 267};
+        nums = new int[]{39, 56, 82, 112, 136, 5, 162, 48, 7};
         return nums;
     }
 
-
+    // TODO:Обновить метод добавив bool параметр, включающий метод сортировки
     public int[] createRandomArray(int size, int min, int max) {
         nums = new int[size];
         for (int i = 0; i < size; i++) {
-
             nums[i] = min + rnd.nextInt(max - min + 1);
         }
+
         return nums;
     }
 
-    public void printArray(int[] arr) {
-        System.out.println(Arrays.toString(arr)); // TODO: переделать на более красивый вывод
+    // TODO: Удалить после обновления "createRandomArray"
+    public int[] createOrderedArray() {
+        nums = new int[]{19, 48, 50, 56, 68, 69, 70, 94, 103};
+        return nums;
+    }
+
+
+    public int[] getArray() {
+        return nums;
     }
 
 }

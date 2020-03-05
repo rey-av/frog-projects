@@ -8,19 +8,18 @@ public class ManagerSearch {
 
     private SearcherFactory fact;
 
-    public ManagerSearch()
-    {
+    public ManagerSearch() {
         fact = new SearcherFactory();
     }
 
 
-    public void Search(searcherType type) {
+    public int Search(searcherType type, GenerateArray arr, int key) {
         AbstractSearch searcher = fact.SelectSearcher(type);
-        if(searcher == null) {
+        if (searcher == null) {
             System.out.println("Invalid searcher type. Search was interrupted. Current search type: " + type);
-            return;
+            return 0;
         }
-        searcher.Search();
+        return searcher.Search(arr, key);
     }
 
 }
