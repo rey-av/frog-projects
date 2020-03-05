@@ -24,12 +24,12 @@ public class BubbleSort implements ISort {
             for (int i = 0; i < arr.length - 1; i++) {
                 if (direction.equals(SortDirection.ASC)) {
                     if (arr[i + 1] < arr[i]) {
-                        swap(arr, i, i + 1); // no pass by reference, thanks Java :(
+                        ISort.swap(arr, i, i + 1); // no pass by reference, thanks Java :(
                         swapped = true;
                     }
                 } else {
                     if (arr[i + 1] > arr[i]) {
-                        swap(arr, i, i + 1);
+                        ISort.swap(arr, i, i + 1);
                         swapped = true;
                     }
                 }
@@ -37,13 +37,6 @@ public class BubbleSort implements ISort {
         }
 
         return arr;
-    }
-
-
-    public void swap(int[] arr, int index1, int index2) {
-        int temp = arr[index1];
-        arr[index1] = arr[index2];
-        arr[index2] = temp;
     }
 
 
