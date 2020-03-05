@@ -3,10 +3,13 @@ package com.frog.Andrey;
 import com.frog.Andrey.classes.SortInfo;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
 
 import static com.frog.Andrey.utils.ArithmeticUtils.checksum;
 import static com.frog.Andrey.utils.SortUtils.bubbleIterate;
 import static com.frog.Andrey.utils.SortUtils.bubbleSort;
+import static com.frog.Andrey.utils.SortUtils.insertionSort;
 import static com.frog.Andrey.utils.SortUtils.selectionSort;
 
 public class Main {
@@ -33,6 +36,13 @@ public class Main {
         selectionSort(arr);
         System.out.println(Arrays.toString(ref));
         System.out.println(Arrays.toString(arr));
+
+        // insertion sort
+        LinkedList<String> list = new LinkedList<>(Arrays.asList(
+                "Logos", "Buenos", "Aires", "Wind", "Infrastructure", "Cynical", "Heart", "Thought"));
+        System.out.println(insertionSort(list));
+        list = new LinkedList<>(Arrays.asList("34", "2", "9", "50", "11110", "0011"));
+        System.out.println(insertionSort(list));
     }
 
 }

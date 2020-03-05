@@ -2,12 +2,21 @@ package com.frog.Andrey.utils;
 
 import com.frog.Andrey.classes.SortInfo;
 
+import java.util.LinkedList;
+
 public abstract class SortUtils {
+
+    public static LinkedList<String> insertionSort(LinkedList<String> list) {
+        if (list == null || list.isEmpty()) return list;
+        for (int i = 1; i < list.size(); i++)
+            for (int j = 0; j < i; j++) if (list.get(j).compareTo(list.get(i)) > 0) list.add(j, list.remove(i));
+        return list;
+    }
+
 
     public static void selectionSort(int[] arr) {
         int len;
         if (arr == null || (len = arr.length) <= 0) return;
-
         int iMax;
         while (len > 1) {
             iMax = 0;
