@@ -12,6 +12,11 @@ public class SearchBinary extends AbstractSearch {
     @Override
     public int Search(int[] arr, int key) {
 
+        if (arr == null) {
+            System.out.println("Array cannot be null. Search was interrupted.");
+            return -1;
+        }
+
         int index = -1;
         int high = arr.length - 1;
         int low = 0;

@@ -1,29 +1,28 @@
 import com.frog.veronika.search.RandomData;
-import com.frog.veronika.search.searcherClass.SearchLinear;
+import com.frog.veronika.search.searcherClass.SearchBinary;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-public class SearchLinearTest {
+public class SearchBinaryTest {
 
-    private int[] arr = new int[]{2, 10, 32, 1, 0, 31, 66};
+    private int[] arr = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    RandomData random = new RandomData();
 
     @Test
     public void SearchTest() {
-        RandomData random = new RandomData();
         random.setArray(arr);
 
-        SearchLinear search = new SearchLinear();
-        int index = search.Search(random.getArray(), 32);
-        Assert.assertEquals("Invalid index: ", 2, index);
+        SearchBinary search = new SearchBinary();
+        int index = search.Search(random.getArray(), 4); // index = 3
+        Assert.assertEquals("Invalid index: ", 3, index);
     }
 
 
     @Test
     public void SearchNegativeTest() {
-        RandomData random = new RandomData();
         random.setArray(arr);
 
-        SearchLinear search = new SearchLinear();
+        SearchBinary search = new SearchBinary();
         int index = search.Search(random.getArray(), 666);
         Assert.assertEquals("Invalid index: ", -1, index);
 
@@ -32,4 +31,3 @@ public class SearchLinearTest {
     }
 
 }
-

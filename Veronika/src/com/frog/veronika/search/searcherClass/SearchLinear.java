@@ -7,8 +7,9 @@ public class SearchLinear extends AbstractSearch {
 
     @Override
     public int Search(int[] array, int key) {
+
         if (array == null) {
-            System.out.println("Array cannot be null.Search was interrupted.");
+            System.out.println("Array cannot be null. Search was interrupted.");
             return -1;
         }
 
