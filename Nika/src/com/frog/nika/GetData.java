@@ -1,8 +1,8 @@
-package com.frog.nika.search;
+package com.frog.nika;
 
 import java.util.Random;
 
-public class RandomData {
+public class GetData {
 
     private int[] nums;
     private Random rnd = new Random(System.currentTimeMillis());

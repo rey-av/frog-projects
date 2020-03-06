@@ -1,4 +1,4 @@
-import com.frog.nika.search.RandomData;
+import com.frog.nika.GetData;
 import com.frog.nika.search.searcherClass.SearchLinear;
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,7 +9,7 @@ public class SearchLinearTest {
 
     @Test
     public void SearchTest() {
-        RandomData random = new RandomData();
+        GetData random = new GetData();
         random.setArray(arr);
 
         SearchLinear search = new SearchLinear();
@@ -20,7 +20,7 @@ public class SearchLinearTest {
 
     @Test
     public void SearchNegativeTest() {
-        RandomData random = new RandomData();
+        GetData random = new GetData();
         random.setArray(arr);
 
         SearchLinear search = new SearchLinear();

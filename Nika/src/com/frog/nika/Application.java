@@ -1,6 +1,5 @@
 package com.frog.nika;
 
-import com.frog.nika.search.RandomData;
 import com.frog.nika.search.ManagerSearch;
 
 import java.util.Arrays;
@@ -12,7 +11,7 @@ public class Application {
     public static void main(String[] args) {// TODO: добавить логи
         ManagerSearch searchManager = new ManagerSearch();
 
-        RandomData array = new RandomData();
+        GetData array = new GetData();
         array.createArray();
 
         int searchKey = 48;

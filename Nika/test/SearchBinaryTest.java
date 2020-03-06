@@ -1,4 +1,4 @@
-import com.frog.nika.search.RandomData;
+import com.frog.nika.GetData;
 import com.frog.nika.search.searcherClass.SearchBinary;
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 public class SearchBinaryTest {
 
     private int[] arr = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    RandomData random = new RandomData();
+    GetData random = new GetData();
 
     @Test
     public void SearchTest() {
