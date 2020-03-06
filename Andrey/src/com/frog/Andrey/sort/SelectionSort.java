@@ -15,16 +15,12 @@ public class SelectionSort {
 
     public static void sort(int[] arr) {
         int remain; // count of elements left to sort
-        if (arr == null || (remain = arr.length) <= 0) {
-            return;
-        }
+        if (arr == null || (remain = arr.length) <= 0) return;
 
         int max; // index of max
         while (remain > 1) {
             max = 0;
-            for (int i = 1; i < remain; i++) {
-                if (arr[i] > arr[max]) max = i;
-            }
+            for (int i = 1; i < remain; i++) if (arr[i] > arr[max]) max = i;
             if (max != remain - 1) swap(arr, max, remain - 1);
             remain--;
         }

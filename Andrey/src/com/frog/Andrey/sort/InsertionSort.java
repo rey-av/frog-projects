@@ -20,19 +20,13 @@ public class InsertionSort {
 
 
     public static void sort(LinkedList<String> list) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
+        if (list == null || list.isEmpty()) return;
 
         int it; // index to iterate over
         int in; // index to insert at
-        for (it = 1; it < list.size(); it++) {
-            for (in = 0; in < it; in++) {
-                if (list.get(in).compareTo(list.get(it)) > 0) {
-                    list.add(in, list.remove(it));
-                }
-            }
-        }
+        for (it = 1; it < list.size(); it++)
+            for (in = 0; in < it; in++)
+                if (list.get(in).compareTo(list.get(it)) > 0) list.add(in, list.remove(it));
     }
 
 }

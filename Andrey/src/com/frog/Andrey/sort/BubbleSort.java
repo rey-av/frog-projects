@@ -6,29 +6,23 @@ import java.util.Arrays;
 
 import static com.frog.Andrey.utils.Utils.checksum;
 import static com.frog.Andrey.utils.Utils.swap;
+import static java.lang.System.out;
 
 public class BubbleSort {
 
+    private static final int[] ARRAY = new int[]{3, 1, 4, 1, 5, 9, 2, 6};
+
+
     public static void main(String[] args) {
-        final int[] ref = {3, 1, 4, 1, 5, 9, 2, 6};
-        int[] arr;
-
-        // iterate, show swaps and result checksum
-        arr = ref;
-        int swaps = iterate(arr);
-        System.out.println(Arrays.toString(arr) + "\n" + swaps + " " + checksum(arr));
-
         // sort, show passes and swaps
-        arr = ref.clone();
+        int[] arr = ARRAY;
         SortInfo info = sort(arr);
-        System.out.println(Arrays.toString(arr) + "\n" + info.getPasses() + " " + info.getSwaps());
+        out.println(Arrays.toString(arr) + "\n" + info.getPasses() + " " + info.getSwaps() + " " + checksum(arr));
     }
 
 
     public static SortInfo sort(int[] array) {
-        if (array == null || array.length <= 0) {
-            return new SortInfo(0, 0);
-        }
+        if (array == null || array.length <= 0) return new SortInfo(0, 0);
 
         int passes = 1; // count last pass
         int total = 0; // total swaps
@@ -44,9 +38,7 @@ public class BubbleSort {
 
     public static int iterate(int[] array) {
         int size;
-        if (array == null || (size = array.length) <= 0) {
-            return 0;
-        }
+        if (array == null || (size = array.length) <= 0) return 0;
 
         int count = 0;
         int cur; // current

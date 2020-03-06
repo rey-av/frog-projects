@@ -27,11 +27,8 @@ public abstract class Utils {
         }
 
         int checksum = 0;
-        for (int index = 0; index < size; index++) {
-            // new checksum is modulo by LIMIT of previous checksum with current element both multiplied by SEED
-            checksum = (checksum + array[index]) * SEED % LIMIT;
-        }
-
+        // new checksum is modulo by LIMIT of previous checksum with current element both multiplied by SEED
+        for (int index = 0; index < size; index++) checksum = ((checksum + array[index]) * SEED) % LIMIT;
         return checksum;
     }
 
