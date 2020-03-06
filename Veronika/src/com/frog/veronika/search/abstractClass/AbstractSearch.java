@@ -2,6 +2,6 @@ package com.frog.veronika.search.abstractClass;
 
 public abstract class AbstractSearch {
 
-   public abstract void Search();
+    public abstract int Search(int[] arr, int key);
 
 }
