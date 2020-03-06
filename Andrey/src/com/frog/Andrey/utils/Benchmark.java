@@ -69,8 +69,11 @@ public abstract class Benchmark {
 
 
     private static Long calculate(Runnable target) {
+        if (target == null) throw new IllegalArgumentException("Action cannot be null");
+
         long start = currentTimeMillis();
         target.run();
+
         return currentTimeMillis() - start;
     }
 
