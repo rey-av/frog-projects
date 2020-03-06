@@ -9,7 +9,7 @@ public abstract class Assert {
     }
 
 
-    public static <T> void isTrue(boolean expression, String errMessage) {
+    public static void isTrue(boolean expression, String errMessage) {
         if (!expression) {
             throw new IllegalStateException(errMessage);
         }
