@@ -4,43 +4,52 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-//TODO: in progress
 public class MicroLife {
 
-    static String[][] matrix = new String[13][13];
+    private static final int MOVES = 40;
+    private static final int MATRIX_SIZE = 41; // should be odd
+    private static final String ALIVE = "X";
+    private static final String DEAD = "-";
+    private static String[][] matrix = new String[MATRIX_SIZE][MATRIX_SIZE];
 
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = "-";
+                matrix[i][j] = DEAD;
             }
         }
 
         FileReader in = new FileReader("resources/other/microlife.txt");
         BufferedReader br = new BufferedReader(in);
         String s;
-        int matrixStart = 3;
-        while ((s = br.readLine()) != null) {
+        int matrixStart = (MATRIX_SIZE - 7) / 2;
+        while ((s = br.readLine()) != null) { // init draw
             String[] init = s.split("");
             int k = 0;
-            for (int j = 3; j < matrix[matrixStart].length - 3; j++) {
+            for (int j = (MATRIX_SIZE - 7) / 2; j < matrix[matrixStart].length - (MATRIX_SIZE - 7) / 2; j++) {
                 matrix[matrixStart][j] = init[k];
                 k++;
             }
             matrixStart++;
         }
 
+        //Init print
         for (String[] strings : matrix) {
             for (String string : strings) {
                 System.out.print(string);
             }
             System.out.println();
         }
-        String[][] newMatrix = new String[13][13];
-        for (int i = 0; i < 5; i++) {
+
+        String[][] newMatrix;
+        int quantity;
+        for (int i = 0; i < MOVES; i++) { // Generating MOVES moves
+            Thread.sleep(500);
+            newMatrix = new String[MATRIX_SIZE][MATRIX_SIZE]; // Clear new turn matrix
             for (int j = 0; j < matrix.length; j++) {
                 for (int k = 0; k < matrix[j].length; k++) {
-                    int quantity = 0;
+                    quantity = 0;
                     quantity += checkNeighbor(j, k, -1, 0, matrix); // North
                     quantity += checkNeighbor(j, k, -1, 1, matrix); // North-East
                     quantity += checkNeighbor(j, k, 0, 1, matrix); // East
@@ -49,17 +58,17 @@ public class MicroLife {
                     quantity += checkNeighbor(j, k, 1, -1, matrix); // South-West
                     quantity += checkNeighbor(j, k, 0, -1, matrix); // West
                     quantity += checkNeighbor(j, k, -1, -1, matrix); // North-West
-                    if (matrix[j][k].equals("-")) {
-                        if(quantity == 3) {
-                            newMatrix[j][k] = "X";
+                    if (matrix[j][k].equals(DEAD)) {
+                        if (quantity == 3) {
+                            newMatrix[j][k] = ALIVE;
                         } else {
-                            newMatrix[j][k] = "-";
+                            newMatrix[j][k] = DEAD;
                         }
-                    } else if (matrix[j][k].equals("X")) {
-                        if(quantity == 2 || quantity == 3) {
-                            newMatrix[j][k] = "X";
+                    } else if (matrix[j][k].equals(ALIVE)) {
+                        if (quantity == 2 || quantity == 3) {
+                            newMatrix[j][k] = ALIVE;
                         } else {
-                            newMatrix[j][k] = "-";
+                            newMatrix[j][k] = DEAD;
                         }
                     }
                 }
@@ -67,33 +76,27 @@ public class MicroLife {
             System.out.println();
             System.out.println();
             matrix = newMatrix;
-            int xs = 0;
+            int cellsAlive = 0;
             for (String[] strings : newMatrix) {
                 for (String string : strings) {
                     System.out.print(string);
-                    if(string.equals("X")) {
-                        xs++;
+                    if (string.equals(ALIVE)) {
+                        cellsAlive++;
                     }
                 }
                 System.out.println();
             }
-            System.out.print(xs + " ");
+            System.out.print("moves: " + (i + 1) + "; ");
+            System.out.println("Cells alive: " + cellsAlive);
         }
-
-        //Print matrix
-//        for (int i = 0; i < matrix.length; i++) {
-//            for (int j = 0; j < matrix[i].length; j++) {
-//                System.out.print(matrix[i][j]);
-//            }
-//            System.out.println();
-//        }
     }
 
-    private static int checkNeighbor(int posX, int posY, int plusX, int plusY, String[][] array) {
+
+    private static int checkNeighbor(int posX, int posY, int plusV, int plusH, String[][] array) {
         try {
-            if (array[posX + plusX][posY + plusY].equals("X")) {
+            if (array[posX + plusV][posY + plusH].equals(ALIVE)) {
                 return 1;
-            } else if (array[posX + plusX][posY + plusY].equals("-")) {
+            } else if (array[posX + plusV][posY + plusH].equals(DEAD)) {
                 return 0;
             }
         } catch (Exception e) {
