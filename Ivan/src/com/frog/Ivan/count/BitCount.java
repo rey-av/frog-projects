@@ -9,12 +9,12 @@ public class BitCount {
         try (BufferedReader br = new BufferedReader(new FileReader("resources/count/bitcount.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
-                String split[] = line.split(" ");
-                for(String s: split) {
+                String[] split = line.split(" ");
+                for (String s : split) {
                     int counter = 0;
                     String s1 = Integer.toBinaryString(Integer.parseInt(s));
                     for (int i = 0; i < s1.length(); i++) {
-                        if(Integer.parseInt(s1.substring(i, i+1))==1)
+                        if (Integer.parseInt(s1.substring(i, i + 1)) == 1)
                             counter++;
                     }
                     System.out.print(counter + " ");

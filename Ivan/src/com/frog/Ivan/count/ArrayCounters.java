@@ -16,13 +16,13 @@ public class ArrayCounters {
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(" ");
                 for (int i = 0; i < split.length; i++) {
-                    for (int j = 0; j <counters.length; j++) {
-                        if (Integer.parseInt(split[i])==j+1){
+                    for (int j = 0; j < counters.length; j++) {
+                        if (Integer.parseInt(split[i]) == j + 1) {
                             counters[j]++;
                         }
                     }
                 }
-                for (int i = 0; i <counters.length ; i++) {
+                for (int i = 0; i < counters.length; i++) {
                     System.out.println(counters[i]);
                 }
             }

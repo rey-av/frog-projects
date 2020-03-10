@@ -22,7 +22,7 @@ public class NeumannRandomGenerator {
                 while (true) {
                     loop++;
                     i = (i * i) / 100 % 10000;
-                    if(remember.contains(i)) {
+                    if (remember.contains(i)) {
                         break;
                     }
                     remember.add(i);

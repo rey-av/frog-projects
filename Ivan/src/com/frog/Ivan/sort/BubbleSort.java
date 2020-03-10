@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class BubbleSort {
 
     public static void main(String[] args) throws IOException {
-        FileReader in = new FileReader("resources/bubblesort.txt");
+        FileReader in = new FileReader("resources/sort/bubblesort.txt");
         BufferedReader br = new BufferedReader(in);
         String s;
         while ((s = br.readLine()) != null) {
@@ -17,24 +17,46 @@ public class BubbleSort {
             boolean isChanged;
             String[] init = s.split(" ");
             int[] mass = Arrays.stream(init).mapToInt(Integer::parseInt).toArray();
-            for (int i = 0; i < mass.length; i++) {
-                isChanged = false;
-                for (int j = i; j < mass.length; j++) {
-                    if(mass[i] > mass[j]) {
-                        int temp = mass[i];
-                        mass[i] = mass[j];
-                        mass[j] = temp;
-                        change++;
-                        isChanged = true;
-                    }
-                }
-                if(!isChanged) {
-                    pass--;
-                    break;
-                }
-                pass++;
+            bubbleSort(mass);
+            for (int value : mass) {
+                System.out.print(value + " ");
             }
-                System.out.println(pass + " " + change);
+//            for (int i = 0; i < mass.length; i++) {
+//                isChanged = false;
+//                for (int j = i; j < mass.length; j++) {
+//                    if(mass[i] > mass[j]) {
+//                        int temp = mass[i];
+//                        mass[i] = mass[j];
+//                        mass[j] = temp;
+//                        change++;
+//                        isChanged = true;
+//                    }
+//                }
+//                if(!isChanged) {
+//                    pass--;
+//                    break;
+//                }
+//                pass++;
+//            }
+//                System.out.println(pass + " " + change);
+        }
+    }
+
+    private static void bubbleSort(int[] arr) {
+        boolean swapped;
+        for (int i = 0; i < arr.length - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            if (!swapped)
+                break;
         }
     }
 

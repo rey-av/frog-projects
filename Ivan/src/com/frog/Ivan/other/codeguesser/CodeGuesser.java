@@ -39,16 +39,16 @@ public class CodeGuesser {
         for (Map.Entry<Integer, Integer> a : map.entrySet()) {
             if (a.getValue() == 0) {
                 if (ones.contains(a.getKey() % 10)) {
-                    ones.remove(ones.indexOf(a.getKey() % 10));
+                    ones.remove((Integer) a.getKey() % 10);
                 }
                 if (tens.contains(a.getKey() / 10 % 10)) {
-                    tens.remove(tens.indexOf(a.getKey() / 10 % 10));
+                    tens.remove((Integer) a.getKey() / 10 % 10);
                 }
                 if (hundreds.contains(a.getKey() / 100 % 10)) {
-                    hundreds.remove(hundreds.indexOf(a.getKey() / 100 % 10));
+                    hundreds.remove((Integer) a.getKey() / 100 % 10);
                 }
                 if (thousands.contains(a.getKey() / 1000)) {
-                    thousands.remove(thousands.indexOf(a.getKey() / 1000));
+                    thousands.remove((Integer) a.getKey() / 1000);
                 }
             } else {
                 int indexOfOnes = a.getKey() % 10 == 0 ? a.getKey() % 10 : a.getKey() % 10 * 4;
