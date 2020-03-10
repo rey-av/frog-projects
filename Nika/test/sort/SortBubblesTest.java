@@ -4,8 +4,6 @@ import com.frog.nika.sort.sortClass.SortBubbles;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
-
 public class SortBubblesTest {
 
     int[] arrRandom = {4, 12, 6, 0, -299, 321};

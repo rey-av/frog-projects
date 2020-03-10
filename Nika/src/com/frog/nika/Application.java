@@ -5,7 +5,8 @@ import com.frog.nika.sort.EnumSort;
 import com.frog.nika.sort.ManagerSort;
 
 import java.util.Arrays;
-import java.util.SortedMap;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.frog.nika.search.EnumSearch.searcherType;
 
@@ -51,6 +52,34 @@ public class Application {
         sortManager.Sort(EnumSort.sortType.SELECTION, arr);
         System.out.println("After SELECTION SORT: " + Arrays.toString(arr) + "\n");
 
+        /// -------------------    МАПЫ    ------------------- ///
+        HashMap<String, String> stringHashMap = new HashMap<String, String>();
+
+        // положить значения
+        stringHashMap.put("Vasy", "12.12.1998"); // 1-key, 2-value
+        stringHashMap.put("Pety", "05.06.1996");
+        stringHashMap.put("Toly", "18.09.1997");
+
+        showHashMap(stringHashMap);
+
+        String key = "Vasy";
+
+        // значение по ключу
+        System.out.println("Value from key Vasy: " + stringHashMap.get(key) + "\n");
+
+        // удалить по ключу
+        stringHashMap.remove(key);
+        System.out.println("After remove value from key: " + key);
+        showHashMap(stringHashMap);
     }
 
+    private static void showHashMap(HashMap<String, String> map) {
+        // показать все запись в виде ключ-значение
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + " - " + value);
+        }
+        System.out.println();
+    }
 }
