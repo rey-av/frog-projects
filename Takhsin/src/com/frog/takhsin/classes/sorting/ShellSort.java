@@ -13,6 +13,10 @@ public class ShellSort extends AbstractSort {
     public int[] sort(int[] arr, SortDirection direction) {
         super.sort(arr, direction);
 
+        if (arr.length == 1) {
+            return arr;
+        }
+
         int gap = arr.length / 2;
 
         while (gap > 0) {

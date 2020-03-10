@@ -13,6 +13,10 @@ public class ShakerSort extends AbstractSort {
     public int[] sort(int[] arr, SortDirection direction) {
         super.sort(arr, direction);
 
+        if (arr.length == 1) {
+            return arr;
+        }
+
         boolean swapped = true;
         while (swapped) {
             swapped = false;

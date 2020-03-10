@@ -19,6 +19,10 @@ public class BogoSort extends AbstractSort {
     public int[] sort(int[] arr, SortDirection direction) {
         super.sort(arr, direction);
 
+        if (arr.length == 1) {
+            return arr;
+        }
+
         List<Integer> integerList = Arrays.stream(arr).boxed().collect(Collectors.toList());
         while (!isSorted(integerList, direction)) {
             Collections.shuffle(integerList);
