@@ -24,7 +24,7 @@ public class BogoSort extends AbstractSort {
             Collections.shuffle(integerList);
         }
 
-        return integerList.stream().mapToInt(i -> i).toArray();
+        return integerList.stream().mapToInt(Integer::intValue).toArray();
     }
 
 
