@@ -82,6 +82,10 @@ public class SortAlgorithms {
                 }
             }
 
+            if(!swapped){
+                break;
+            }
+
             for (int j = A.length-1; j > 0; j--) {
                 if (A[j - 1] > A[j]) {
                     placeholder = A[j - 1];
