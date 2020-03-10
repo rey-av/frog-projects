@@ -18,13 +18,17 @@ public class Main {
         // write your code here
         List<AbstractSort> sortingAlgorithms = Arrays.asList(new BubbleSort(), new SelectionSort(), new InsertionSort(), new ShakerSort(), new ShellSort(), new BogoSort());
 
-        int[] ints = {1, 4, 3, 2, 6, 5, -1,91,-5,10};
+        int[] ints = {1, 4, 3, 2, 6, 5, -1, 91, -5, 10};
         for (AbstractSort algorithm : sortingAlgorithms) {
             System.out.println("\n\n" + algorithm.getName());
             System.out.println("ASC sorting: ");
+            long tBefore = System.currentTimeMillis();
             Arrays.stream(algorithm.sort(ints, SortDirection.ASC)).forEach(number -> System.out.print(number + " "));
+            System.out.println("Time: " + (System.currentTimeMillis() - tBefore));
             System.out.println("\nDSC sorting: ");
+            tBefore = System.currentTimeMillis();
             Arrays.stream(algorithm.sort(ints, SortDirection.DSC)).forEach(number -> System.out.print(number + " "));
+            System.out.println("Time: " + (System.currentTimeMillis() - tBefore));
         }
 
     }
