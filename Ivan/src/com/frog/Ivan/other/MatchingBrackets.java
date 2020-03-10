@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
-//1 if match, zero if no
+//1 if match, 0 if not
 public class MatchingBrackets {
 
     private static Stack<String> brackets = new Stack<>();
