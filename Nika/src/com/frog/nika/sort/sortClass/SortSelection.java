@@ -6,6 +6,12 @@ public class SortSelection extends AbstractSort {
 
     @Override
     public void Sort(int[] arr) {
+
+        if (arr == null) {
+            System.out.println("Array cannot be null. Sort was interrupted.");
+            return;
+        }
+
         for (int i = 0; i < arr.length; i++) {
 
             int minVal = arr[i]; //  вытаскиваем значение элемента

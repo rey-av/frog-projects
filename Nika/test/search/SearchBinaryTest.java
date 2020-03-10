@@ -1,3 +1,5 @@
+package search;
+
 import com.frog.nika.GetData;
 import com.frog.nika.search.searcherClass.SearchBinary;
 import org.junit.Assert;
