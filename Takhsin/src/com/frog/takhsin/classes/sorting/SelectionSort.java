@@ -2,8 +2,6 @@ package com.frog.takhsin.classes.sorting;
 
 import com.frog.takhsin.enums.SortDirection;
 
-import java.util.Arrays;
-
 public class SelectionSort extends AbstractSort {
 
     public SelectionSort() {
