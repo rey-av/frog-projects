@@ -32,8 +32,8 @@ public class CountingSort extends AbstractSort {
 
         int[] counts = new int[max - min + 1];
 
-        for (int i = 0; i < arr.length; i++) {
-            counts[arr[i] - min]++;
+        for (int value : arr) {
+            counts[value - min]++;
         }
 
         counts[0]--;

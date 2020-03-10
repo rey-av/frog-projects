@@ -30,13 +30,13 @@ public class Main {
         for (AbstractSort algorithm : sortingAlgorithms) {
             System.out.println("\n\n" + algorithm.getName());
             System.out.println("ASC sorting: ");
-            long tBefore = System.currentTimeMillis();
+            long tBefore = System.nanoTime();
             Arrays.stream(algorithm.sort(ints, SortDirection.ASC)).forEach(number -> System.out.print(number + " "));
-            System.out.println("Time: " + (System.currentTimeMillis() - tBefore));
+            System.out.println("Time: " + (System.nanoTime() - tBefore));
             System.out.println("\nDSC sorting: ");
-            tBefore = System.currentTimeMillis();
+            tBefore = System.nanoTime();
             Arrays.stream(algorithm.sort(ints, SortDirection.DSC)).forEach(number -> System.out.print(number + " "));
-            System.out.println("Time: " + (System.currentTimeMillis() - tBefore));
+            System.out.println("Time: " + (System.nanoTime() - tBefore));
         }
 
     }
