@@ -21,24 +21,6 @@ public class BubbleSort {
             for (int value : mass) {
                 System.out.print(value + " ");
             }
-//            for (int i = 0; i < mass.length; i++) {
-//                isChanged = false;
-//                for (int j = i; j < mass.length; j++) {
-//                    if(mass[i] > mass[j]) {
-//                        int temp = mass[i];
-//                        mass[i] = mass[j];
-//                        mass[j] = temp;
-//                        change++;
-//                        isChanged = true;
-//                    }
-//                }
-//                if(!isChanged) {
-//                    pass--;
-//                    break;
-//                }
-//                pass++;
-//            }
-//                System.out.println(pass + " " + change);
         }
     }
 

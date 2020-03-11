@@ -3,11 +3,12 @@ package com.frog.Ivan.count;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+//Prints quantity of each element, from 1 to first line param
 public class ArrayCounters {
 
     public static void main(String[] args) throws Exception {
 
-        try (BufferedReader br = new BufferedReader(new FileReader("resources/arraycounters.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("resources/count/arraycounters.txt"))) {
             String line;
             int[] counters = new int[Integer.parseInt(br.readLine())];
             for (int i = 0; i < counters.length; i++) {

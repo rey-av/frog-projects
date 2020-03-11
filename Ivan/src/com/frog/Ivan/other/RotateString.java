@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+//Rotate string according to number
 public class RotateString {
 
     public static void main(String[] args) throws IOException {

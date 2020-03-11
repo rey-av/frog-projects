@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 
+//Prints km when two cyclists will meet each other
 public class BicycleRace {
 
     public static void main(String[] args) throws IOException {

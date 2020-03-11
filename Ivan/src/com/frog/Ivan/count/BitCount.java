@@ -3,6 +3,7 @@ package com.frog.Ivan.count;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+//Prints quantity of bits in each number
 public class BitCount {
 
     public static void main(String[] args) throws Exception {

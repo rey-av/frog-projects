@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+//Prints duplicates in the string
 public class MatchingWords {
 
     private static List<String> words = new ArrayList<>();

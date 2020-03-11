@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//According to input params
 public class DicePoker {
 
     public static void main(String[] args) throws IOException {
