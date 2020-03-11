@@ -21,13 +21,15 @@ public class BubbleSort {
     }
 
 
-    public static SortInfo sort(int[] array) {
-        if (array == null || array.length <= 0) return new SortInfo(0, 0);
+    public static SortInfo sort(int[] input) {
+        // assert
+
+        int[] clone = input.clone();
 
         int passes = 1; // count last pass
         int total = 0; // total swaps
         int swaps;
-        while ((swaps = iterate(array)) != 0) {
+        while ((swaps = iterate(clone)) != 0) {
             total += swaps;
             passes++;
         }
