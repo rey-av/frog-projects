@@ -16,6 +16,11 @@ import java.util.stream.IntStream;
 
 public class Main {
 
+
+    private static final int TEST_ARRAY_SIZE = 60_000;
+    private static final Random RANDOM = new Random((System.currentTimeMillis() * 13) % 1000);
+
+
     public static void main(String[] args) {
         // write your code here
         List<AbstractSort> sortingAlgorithms = Arrays.asList
@@ -27,20 +32,19 @@ public class Main {
 //                        new BogoSort(),
                         new CountingSort());
 
-        Random random = new Random((System.currentTimeMillis() * 13) % 1000);
-        int[] ints = IntStream.generate(() -> random.nextInt(1000) - 1000).limit(100000).toArray();
+        int[] randomNumbers = IntStream.generate(() -> RANDOM.nextInt(1000) - 1000).limit(TEST_ARRAY_SIZE).toArray();
 
         for (AbstractSort algorithm : sortingAlgorithms) {
             System.out.println("\n\n" + algorithm.getName());
             System.out.println("ASC sorting: ");
             long tBefore = System.currentTimeMillis();
-//            Arrays.stream(algorithm.sort(ints, SortDirection.ASC)).forEach(number -> System.out.print(number + " "));
-            Arrays.stream(algorithm.sort(ints, SortDirection.ASC));
+//            Arrays.stream(algorithm.sort(randomNumbers, SortDirection.ASC)).forEach(number -> System.out.print(number + " "));
+            Arrays.stream(algorithm.sort(randomNumbers, SortDirection.ASC));
             System.out.println("Time: " + (System.currentTimeMillis() - tBefore));
             System.out.println("\nDSC sorting: ");
             tBefore = System.currentTimeMillis();
-//            Arrays.stream(algorithm.sort(ints, SortDirection.DSC)).forEach(number -> System.out.print(number + " "));
-            Arrays.stream(algorithm.sort(ints, SortDirection.DSC));
+//            Arrays.stream(algorithm.sort(randomNumbers, SortDirection.DSC)).forEach(number -> System.out.print(number + " "));
+            Arrays.stream(algorithm.sort(randomNumbers, SortDirection.DSC));
             System.out.println("Time: " + (System.currentTimeMillis() - tBefore));
         }
 
