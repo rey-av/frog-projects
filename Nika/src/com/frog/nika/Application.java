@@ -1,12 +1,11 @@
 package com.frog.nika;
 
+import com.frog.nika.map.Product;
 import com.frog.nika.search.ManagerSearch;
 import com.frog.nika.sort.EnumSort;
 import com.frog.nika.sort.ManagerSort;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static com.frog.nika.search.EnumSearch.searcherType;
 
@@ -53,33 +52,36 @@ public class Application {
         System.out.println("After SELECTION SORT: " + Arrays.toString(arr) + "\n");
 
         /// -------------------    МАПЫ    ------------------- ///
-        HashMap<String, String> stringHashMap = new HashMap<String, String>();
+        // 1 - "вид" HashMap
+        HashMap<String, Double> stringHashMap = new HashMap<String, Double>();
 
         // положить значения
-        stringHashMap.put("Vasy", "12.12.1998"); // 1-key, 2-value
-        stringHashMap.put("Pety", "05.06.1996");
-        stringHashMap.put("Toly", "18.09.1997");
+        stringHashMap.put("USD", 25.31); // 1-key, 2-value
+        stringHashMap.put("RUB", 3.53);
+        stringHashMap.put("EUR", 28.79);
 
         showHashMap(stringHashMap);
 
-        String key = "Vasy";
+        String key = "USD";
 
         // значение по ключу
-        System.out.println("Value from key Vasy: " + stringHashMap.get(key) + "\n");
+        System.out.println("Value from key USD: " + stringHashMap.get(key) + "\n");
 
         // удалить по ключу
         stringHashMap.remove(key);
         System.out.println("After remove value from key: " + key);
         showHashMap(stringHashMap);
+
     }
 
-    private static void showHashMap(HashMap<String, String> map) {
+    private static void showHashMap(HashMap<String, Double> map) {
         // показать все запись в виде ключ-значение
-        for (Map.Entry<String, String> entry : map.entrySet()) {
+        for (Map.Entry<String, Double> entry : map.entrySet()) {
             String key = entry.getKey();
-            String value = entry.getValue();
+            String value = entry.getValue().toString();
             System.out.println(key + " - " + value);
         }
         System.out.println();
     }
+
 }
