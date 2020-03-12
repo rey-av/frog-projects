@@ -52,4 +52,5 @@ public class ReversePolishNotation {
             System.out.println((int) Double.parseDouble(stack.pop()));
         }
     }
+
 }
