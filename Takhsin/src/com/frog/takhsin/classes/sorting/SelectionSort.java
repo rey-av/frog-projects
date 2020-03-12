@@ -22,12 +22,12 @@ public class SelectionSort extends AbstractSort {
 
             for (int j = i + 1; j < arr.length; j++) {
                 if (direction.equals(SortDirection.ASC)) {
-                    if (arr[j] < arr[i]) {
+                    if (arr[j] < arr[swapPos]) {
                         swapPos = j;
                         swap = true;
                     }
                 } else {
-                    if (arr[j] > arr[i]) {
+                    if (arr[j] > arr[swapPos]) {
                         swapPos = j;
                         swap = true;
                     }
