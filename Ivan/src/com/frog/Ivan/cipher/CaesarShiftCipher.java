@@ -32,4 +32,5 @@ public class CaesarShiftCipher {
             System.out.print(" ");
         }
     }
+
 }
