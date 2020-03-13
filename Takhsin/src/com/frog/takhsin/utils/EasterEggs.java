@@ -104,13 +104,14 @@ public class EasterEggs {
                 AtomicReference<String> res = new AtomicReference<>("");
                 callSeq.stream().mapToInt(value -> value).forEach(value -> res.updateAndGet(v -> v + value+" "));
                 solutions.add(res.get());
+                findCombination(entries, ++iteration, entries.get(iteration).getValue(), null);
+                return;
             }
             findCombination(entries, iteration + 1, aux, callSeq);
         } else {
             iteration++;
             findCombination(entries, iteration, entries.get(iteration).getValue(), null);
         }
-
     }
 
 }
