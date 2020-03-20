@@ -5,6 +5,7 @@ import com.frog.takhsin.classes.sorting.BubbleSort;
 import com.frog.takhsin.classes.sorting.CountingSort;
 import com.frog.takhsin.classes.sorting.InsertionSort;
 import com.frog.takhsin.classes.sorting.MergingSort;
+import com.frog.takhsin.classes.sorting.QuickSort;
 import com.frog.takhsin.classes.sorting.SelectionSort;
 import com.frog.takhsin.classes.sorting.ShakerSort;
 import com.frog.takhsin.classes.sorting.ShellSort;
@@ -18,10 +19,10 @@ import java.util.stream.IntStream;
 public class Main {
 
 
-    private static final int TEST_ARRAY_SIZE = 90000;
+    private static final int TEST_ARRAY_SIZE = 8;
     private static final Random RANDOM = new Random((System.currentTimeMillis() * 13) % 1000);
-    private static final int UPPER_BOUND = 500;
-    private static final int LOWER_BOUND = 200;
+    private static final int UPPER_BOUND = 20;
+    private static final int LOWER_BOUND = 5;
 
 
     public static void main(String[] args) {
@@ -34,7 +35,8 @@ public class Main {
                         new ShellSort(),
 //                        new BogoSort(),
                         new CountingSort(),
-                        new MergingSort());
+                        new MergingSort(),
+                        new QuickSort());
 
         int[] randomNumbers = IntStream.generate(() -> RANDOM.nextInt(UPPER_BOUND) - LOWER_BOUND).limit(TEST_ARRAY_SIZE).toArray();
 
