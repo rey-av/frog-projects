@@ -18,7 +18,7 @@ import java.util.stream.IntStream;
 public class Main {
 
 
-    private static final int TEST_ARRAY_SIZE = 10000;
+    private static final int TEST_ARRAY_SIZE = 90000;
     private static final Random RANDOM = new Random((System.currentTimeMillis() * 13) % 1000);
     private static final int UPPER_BOUND = 500;
     private static final int LOWER_BOUND = 200;
@@ -49,7 +49,6 @@ public class Main {
             algorithm.sort(randomNumbers.clone(), SortDirection.DSC);
             System.out.println(System.currentTimeMillis() - tBefore);
         }
-
     }
 
 }
